@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default path will just redirect to the computer list
+GET     /               controllers.HomeController.index()
+
+# Computers list (look at the default values for pagination parameters)
+
+
+POST    /user           controllers.UserController.addUser()
+POST    /event          controllers.EventController.addEvent()
+POST    /qr             controllers.QrController.addQr()
+POST    /ed             controllers.EventDetailsController.addEventDetail()
+
+
+POST    /user/login                 controllers.UserController.login()
+
+
+DELETE  /user/:idToDelete                       controllers.UserController.logoutUser(idToDelete:Long)
+
+
+GET     /con               controllers.EventController.viewEventsConsole()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
